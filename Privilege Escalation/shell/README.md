@@ -70,7 +70,7 @@ interactive shells. These allow you to interact with programs after executing th
 
 ### interactive.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/interactive.PNG)
 
 Here you can see that it's asking interactively that the user type either yes or no in order to continue the connection. This is an interactive program, which requires an interactive shell in order to run.
 
@@ -78,7 +78,7 @@ Here you can see that it's asking interactively that the user type either yes or
 
 ### non_interactive.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/non_interactive.PNG)
 
 Notice that the `whoami` command (which is non-interactive) executes perfectly, but the `ssh` command (which is interactive) gives us no output at all. As an interesting side note, the output of an interactive command does go somewhere, however, figuring out where is an exercise for you to attempt on your own. Suffice to say that interactive programs do not work in non-interactive shells.
 
@@ -127,7 +127,7 @@ The first technique we'll be discussing is applicable only to Linux boxes, as th
 
 ### netcat.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/netcat.PNG)
 
 Note that if the shell dies, any input in your own terminal will not be visible (as a result of having disabled terminal echo). To fix this, type `reset` and `press enter`.
 
@@ -159,7 +159,7 @@ First, open another terminal and run `stty -a`. This will give you a large strea
 
 ### ttp.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/ttp.PNG)
 
 
 Next, in your reverse/bind shell, type in:
@@ -243,7 +243,7 @@ As normal, on the left we have a listener running on our local attacking machine
 
 ### socat.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/socat.PNG)
 
 Note that the socat shell is fully interactive, allowing us to use interactive commands such as SSH. This can then be further improved by setting the `stty values` as seen in the previous task, which will let us use text editors such as Vim or Nano.
 
@@ -290,7 +290,7 @@ Again, note that even for a Windows target, the certificate must be used with th
 
 ### socat_ency.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/socat_ency.png)
 
 This technique will also work with the special, Linux-only TTY shell covered in the previous task
 
@@ -318,7 +318,7 @@ The command first creates a named pipe at `/tmp/f`. It then starts a netcat list
 
 ### mkfifo.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/mkfifo.png)
 
 A very similar command can be used to send a netcat reverse shell:
 
@@ -328,7 +328,7 @@ This command is virtually identical to the previous one, other than using the ne
 
 ### mkfifo_rev.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/mkfifo_rev.png)
 
 ------------------------------------------------------
 
@@ -344,7 +344,7 @@ In order to use this, we need to replace `"<IP>"` and `"<port>"` with an appropr
 
 ### powershell.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/powershell.png)
 
 -------------------------------------------------------
 
@@ -366,7 +366,7 @@ For example, to generate a Windows x64 Reverse Shell in an exe format, we could 
 
 ### msfvenom.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/msfvenom.png)
 
 -------------------------------------------------------
 
@@ -467,7 +467,7 @@ Let's see this in action:
 
 ### Webshells
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/webshell.png)
 
 Notice that when navigating the shell, we used a GET parameter "cmd" with the command `"ifconfig"`, which correctly returned the network information of the box. In other words, by entering the ifconfig command (used to check the network interfaces on a Linux target) into the URL of our shell, it was executed on the system, with the results returned to us. This would work for any other command we chose to use (e.g. `whoami`, `hostname`, `arch`, etc).
 

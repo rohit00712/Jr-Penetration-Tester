@@ -23,7 +23,7 @@ Even if we were to go a step further and look at DLLs (Dynamic-Link Libraries) u
 
 ### 1.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/3.%20Metasploit-Meterpreter/images/1.PNG)
 
 Techniques and tools that can be used to detect Meterpreter are beyond the scope of this room. This section aimed to show you how stealthy Meterpreter is running; remember, most antivirus software will detect it.
 

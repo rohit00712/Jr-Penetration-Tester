@@ -42,7 +42,7 @@ Signature-based antivirus and security solutions have a database of known threat
 
 ###  encoders.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/encoders.PNG)
 
 ### Evasion: While encoders will encode the payload, they should not be considered a direct attempt to evade antivirus software.
 
@@ -50,13 +50,13 @@ On the other hand, “evasion” modules will try that, with more or less succes
 
 ###  evasion.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/evasion.PNG)
 
 ### Exploits: Exploits, neatly organized by target system.
 
 ###  exploits.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/exploits.PNG)
 
 ### NOPs: NOPs (No OPeration) do nothing, literally.
 
@@ -64,7 +64,7 @@ They are represented in the Intel x86 CPU family they are represented with 0x90,
 
 ###  nops.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/nops.PNG)
 
 ### Payloads: Payloads are codes that will run on the target system.
 
@@ -74,7 +74,7 @@ Running command on the target system is already an important step but having an 
 
 ###  payloads.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/payloads.PNG)
 
 You will see three different directories under payloads: singles, stagers and stages.
 
@@ -93,7 +93,7 @@ Both are reverse Windows shells. The former is an inline (or single) payload, as
 
 ###  post.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/post.PNG)
 
 # msfconsole 
 
