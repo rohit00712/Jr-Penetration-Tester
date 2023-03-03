@@ -1,0 +1,28 @@
+ Three different subdomain enumeration methods: Brute Force, OSINT (Open-Source Intelligence) and Virtual Host.
+1. OSINT-SSL/TLS Certificates
+ https://crt.sh
+ https://ui.ctsearch.entrust.com/ui/ctsearchui
+
+2. OSINT-Search Engines
+" -site:www.tryhackme.com  site:*.tryhackme.com" It will only reveal a subdomain for tryhackme.com
+
+3. DNS Bruteforce
+dnsrecon is the tool used to bruteforce the DNS record of the given websites
+dnsrecon -t brt -d acmeitsupport.thm
+
+4. OSINT-Sublist3r
+./sublist3r.py -d acmeitsupport.thm
+
+5. Virtual Hosts
+Some subdomains aren't always hosted in publically accessible DNS results, such as development versions
+ of a web application or administration portals. Instead, the DNS record could be kept on a private DNS
+ server or recorded on the developer's machines in their /etc/hosts file (or c:\windows\system32\drivers\etc\hosts 
+file for Windows users) which maps domain names to IP addresses. 
+
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP
+
+To limit the output:
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
+
+ffuf -w /home/kali/Downloads/SecLists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.63.176 -fs 2395
+

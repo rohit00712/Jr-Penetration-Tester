@@ -1,0 +1,47 @@
+Content Discovery:
+
+This content could be, for example, pages or portals intended for staff usage, older versions of the website, 
+backup files, configuration files, administration panels, etc.
+There are three main ways of discovering content on a website which we'll cover. Manually, Automated and OSINT (Open-Source Intelligence).
+
+1. Manual Discovery-Robots.txt
+
+2. Manual Discovery-Favicon
+For Linux : curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
+For Windows Powershell : curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico -UseBasicParsing -o favicon.ico
+			 Get-FileHash .\favicon.ico -Algorithm MD5
+
+3. Manual Discovery-Sitemap.xml
+It listed all the content want to show to the search engine.
+http://10.10.17.74/sitemap.xml
+
+4. Manual Discovery-HTTP Headers
+>curl http://10.10.17.74 -v
+
+5. Manual Discovery-Framework Stack
+
+6. OSINT-Google Hacking/Dorking
+"site:tryhackme.com admin"
+"inurl:admin"
+"filetype:pdf"
+"intitle:admin"
+
+7. OSINT-Wappalyzer
+https://www.wappalyzer.com/
+
+8. OSINT-Wayback Machine
+https://archive.org/web/
+
+9. OSINT-GitHub
+version control system
+
+10. OSINT-S3 Buckets
+http(s)://{name}.s3.amazonaws.com
+name :  tryhackme-assets.s3.amazonaws.com
+
+11. Automated Discovery
+Three popular automated discovery tools are
+ffuf, dirb and gobuster
+ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://10.10.17.74/FUZZ
+dirb http://10.10.17.74/ /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+gobuster dir --url http://10.10.17.74/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt

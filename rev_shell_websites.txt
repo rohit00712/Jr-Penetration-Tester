@@ -1,0 +1,12 @@
+1. PayloadsAllTheThings :
+Reverse Shell Cheatsheet
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+
+2. pentestmonkey
+https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+
+3. SecLists (wordlist)
+https://github.com/danielmiessler/SecLists
+The SecLists repo, though primarily used for wordlists, also contains some very useful code for obtaining shells.
+
+4. Kali Linux also comes pre-installed with a variety of webshells located at /usr/share/webshells.
