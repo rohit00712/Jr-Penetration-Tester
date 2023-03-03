@@ -34,7 +34,7 @@ Modules and categories under each one are listed below. These are given for refe
 
 ###  auxiliary.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Metasploit/1.%20Metasploit-Introduction/images/auxiliary.PNG)
 
 ### Encoders: Encoders will allow you to encode the exploit and payload in the hope that a signature-based antivirus solution may miss them.
 
