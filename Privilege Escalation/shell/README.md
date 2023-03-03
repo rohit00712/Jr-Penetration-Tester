@@ -432,7 +432,7 @@ This can be used to list all available payloads, which can then be piped into gr
 
 ### msfvenom_payloads.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/shell/images/mvfvenom_payloads.png)
 
 This gives us a full set of Linux meterpreter payloads for 32bit targets.
 
