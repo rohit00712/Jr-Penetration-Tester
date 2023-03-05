@@ -11,13 +11,13 @@ Nmap’s perspective, a lack of reply in a null scan indicates that either the p
 
 ### null_scan_open.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/null_scan_open.png)
 
 However, we expect the target server to respond with an RST packet if the port is closed. Consequently, we can use the lack of RST response to figure out the ports that are not closed: open or filtered.
 
 ### null_scan_close.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/null_scan_close.png)
 
 **FIN SCAN :**
 
@@ -25,13 +25,13 @@ The FIN scan sends a TCP packet with the FIN flag set. You can choose this scan 
 
 ### fin_scan_open.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/fin_scan_open.png)
 
 However, the target system should respond with an RST if the port is closed. Consequently, we will be able to know which ports are closed and use this knowledge to infer the ports that are open or filtered. It's worth noting some firewalls will 'silently' drop the traffic without sending an RST.
 
 ### fin_scan_close.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/fin_scan_close.png)
 
 **Xmas SCAN :**
 
@@ -43,11 +43,11 @@ The following two figures show the case when the TCP port is open and the case w
 
 ### xmas_scan_open.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/xmas_scan_open.png)
 
 ### xmas_scan_close.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Internet%20Security/Nmap%20Advanced%20Port%20Scans/images/xmas_scan_close.png)
 
 # TCP MAIMON SCAN
 

@@ -102,7 +102,7 @@ Scheduled tasks can be listed from the command line using the `schtasks` command
 
 ### 1.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/1.PNG)
 
 You will get lots of information about the task, but what matters for us is the "Task to Run" parameter which indicates what gets executed by the scheduled task, and the "Run As User" parameter, which shows the user that will be used to execute the task.
 
@@ -112,7 +112,7 @@ If our current user can modify or overwrite the "Task to Run" executable, we can
 
 ### 2.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/2.PNG)
 
 As can be seen in the result, the BUILTIN\Users group has full access (F) over the task's binary. This means we can modify the .bat file and insert any payload we like. For your convenience, `nc64.exe` can be found on `C:\tools`. Let's change the bat file to spawn a reverse shell:
 
@@ -162,7 +162,7 @@ To better understand the structure of a service, let's check the apphostsvc serv
 
 ### 3.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/3.PNG)
 
 Here we can see that the associated executable is specified through the **BINARY_PATH_NAME** parameter, and the account used to run the service is shown on the **SERVICE_START_NAME** parameter.
 
@@ -170,13 +170,13 @@ Services have a Discretionary Access Control List (DACL), which indicates who ha
 
 ### 4.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/4.png)
 
 All of the services configurations are stored on the registry under `HKLM\SYSTEM\CurrentControlSet\Services\`:
 
 ### 5.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/5.png)
 
 A subkey exists for every service in the system. Again, we can see the associated executable on the **ImagePath** value and the account used to start the service on the **ObjectName** value. If a DACL has been configured for the service, it will be stored in a subkey called **Security**. As you have guessed by now, only administrators can modify such registry entries by default.
 
@@ -188,7 +188,7 @@ To understand how this works, let's look at a vulnerability found on Splinterwar
 
 ### 6.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/6.PNG)
 
 We can see that the service installed by the vulnerable software runs as svcuser1 and the executable associated with the service is in `C:\Progra~2\System~1\WService.exe`. We then proceed to check the permissions on the executable:
 
@@ -196,7 +196,7 @@ We can see that the service installed by the vulnerable software runs as svcuser
 
 ### 7.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/7.PNG)
 
 And here we have something interesting. The Everyone group has modify permissions (M) on the service's executable. This means we can simply overwrite it with any payload of our preference, and the service will execute it with the privileges of the configured user account.
 
@@ -244,7 +244,7 @@ As an example, let's look at the difference between two services (these services
 
 ### 8.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/8.PNG)
 
 **Remember: PowerShell has 'sc' as an alias to 'Set-Content', therefore you need to use 'sc.exe' to control services if you are in a PowerShell prompt.**
 
@@ -254,7 +254,7 @@ Now let's look at another service without proper quotation:
 
 ### 9.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/9.PNG)
 
 When the SCM tries to execute the associated binary, a problem arises. Since there are spaces on the name of the "Disk Sorter Enterprise" folder, the command becomes ambiguous, and the SCM doesn't know which of the following you are trying to execute:
 
@@ -280,7 +280,7 @@ In our case, the Administrator installed the Disk Sorter binaries under `c:\MyPr
 
 ### 10.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/10.PNG)
 
 The `BUILTIN\\Users` group has **AD** and **WD** privileges, allowing the user to create subdirectories and files, respectively.
 
@@ -358,7 +358,7 @@ This account is part of the "Backup Operators" group, which by default is grante
 
 ### 11.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/11.png)
 
 Once on the command prompt, we can check our privileges with the following command:
 
@@ -388,13 +388,13 @@ And use impacket to retrieve the users' password hashes:
 
 ### 12.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/12.PNG)
 
 We can finally use the Administrator's hash to perform a Pass-the-Hash attack and gain access to the target machine with SYSTEM privileges:
 
 ### 13.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/13.PNG)
 
 ## SeTakeOwnership
 
@@ -404,7 +404,7 @@ To get the SeTakeOwnership privilege, we need to open a command prompt using the
 
 ### 14.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/14.png)
 
 Once on the command prompt, we can check our privileges with the following command:
 
@@ -414,7 +414,7 @@ We'll abuse `utilman.exe` to escalate privileges this time. Utilman is a built-i
 
 ### 15.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/15.png)
 
 Since Utilman is run with SYSTEM privileges, we will effectively gain SYSTEM privileges if we replace the original binary for any payload we like. As we can take ownership of any file, replacing it is trivial.
 
@@ -434,13 +434,13 @@ To trigger utilman, we will lock our screen from the start button:
 
 ### 16.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/16.png)
 
 And finally, proceed to click on the "Ease of Access" button, which runs utilman.exe with SYSTEM privileges. Since we replaced it with a cmd.exe copy, we will get a command prompt with SYSTEM privileges:
 
 ### 17.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/17.png)
 
 ## SeImpersonate / SeAssignPrimaryToken
 
@@ -452,7 +452,7 @@ Let's assume we have an FTP service running with user `ftp`. Without impersonati
 
 ### 18.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/18.png)
 
 There are several reasons why using ftp's token is not the best idea: - For the files to be served correctly, they would need to be accessible to the `ftp` user. In the example above, the `FTP` service would be able to access Ann's files, but not Bill's files, as the DACL in Bill's files doesn't allow user `ftp`. This adds complexity as we must manually configure specific permissions for each served file/directory. - For the operating system, all files are accessed by user `ftp`, independent of which user is currently logged in to the FTP service. This makes it impossible to delegate the authorisation to the operating system; therefore, the FTP service must implement it. - If the FTP service were compromised at some point, the attacker would immediately gain access to all of the folders to which the ftp user has access.
 
@@ -460,7 +460,7 @@ If, on the other hand, the FTP service's user has the SeImpersonate or SeAssignP
 
 ### 19.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/19.png)
 
 Now, if user Ann logs in to the FTP service and given that the ftp user has impersonation privileges, it can borrow Ann's access token and use it to access her files. This way, the files don't need to provide access to user ftp in any way, and the operating system handles authorisation. Since the FTP service is impersonating Ann, it won't be able to access Jude's or Bill's files during that session.
 
@@ -480,7 +480,7 @@ We can use the web shell to check for the assigned privileges of the compromised
 
 ### 20.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/20.png)
 
 To use RogueWinRM, we first need to upload the exploit to the target machine. For your convenience, this has already been done, and you can find the exploit in the `C:\tools\` folder.
 
@@ -498,7 +498,7 @@ And then, use our web shell to trigger the RogueWinRM exploit using the followin
 
 ### 21.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/21.png)
 
 **Note:** The exploit may take up to 2 minutes to work, so your browser may appear as unresponsive for a bit. This happens if you run the exploit multiple times as it must wait for the BITS service to stop before starting it again. The BITS service will stop automatically after 2 minutes of starting.
 
@@ -508,7 +508,7 @@ If all was correctly set up, you should expect a shell with SYSTEM privileges:
 
 ### 22.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/22.PNG)
 
 # Abusing vulnerable software
 
@@ -540,7 +540,7 @@ To put together a working exploit, we need to understand how to talk to port 606
 
 ### 23.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/23.png)
 
 The first packet is simply a hello packet that contains a fixed string. The second packet indicates that we want to execute procedure number 5, as this is the vulnerable procedure that will execute any command for us. The last two packets are used to send the length of the command and the command string to be executed, respectively.
 
@@ -580,7 +580,7 @@ As a last step, you can run a command prompt as administrator:
 
 ### 24.png
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Privilege%20Escalation/Windows%20Privilege%20Escalation/images/24.png)
 
 When prompted for credentials, use the pwnd account. 
 

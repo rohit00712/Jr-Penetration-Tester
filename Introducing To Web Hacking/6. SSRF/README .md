@@ -28,25 +28,25 @@ The attacker can modify the area in red to an URL of their choice.
 
 ### 1.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/1.PNG)
 
 2. The below example shows how an attacker can still reach the /api/user page with only having control over the path by utilising directory traversal. When website.thm receives ../ this is a message to move up a directory which removes the /stock portion of the request and turns the final request into /api/user
 
 ### 2.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/2.PNG)
 
 3. In this example, the attacker can control the server's subdomain to which the request is made. Take note of the payload ending in `&x=` being used to stop the remaining path from being appended to the end of the attacker's URL and instead turns it into a parameter (?x=) on the query string.
 
 ### 3.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/3.PNG)
 
 4. Going back to the original request, the attacker can instead force the webserver to request a server of the attacker's choice. By doing so, we can capture request headers that are sent to the attacker's specified domain. These headers could contain authentication credentials or API keys sent by website.thm (that would normally authenticate to api.website.thm). 
 
 ### 4.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/4.PNG)
 
 5. Challenge
 Using what you've learnt, try changing the address in the browser below to force the webserver to return data from https://server.website.thm/flag?id=9. To make things easier the Server Requesting bar at the bottom of the mock browser will show the URL that website.thm is requesting.
@@ -61,7 +61,7 @@ Potential SSRF vulnerabilities can be spotted in web applications in many differ
 
 ### 5.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/5.PNG)
 
 Some of these examples are easier to exploit than others, and this is where a lot of trial and error will be required to find a working payload.
 
@@ -97,31 +97,31 @@ First, create a customer account and sign in. Once you've signed in, visit https
 
 ### 6.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/6.PNG)
 
 If you choose one of the avatars and then click the Update Avatar button, you'll see the form change and, above it, display your currently selected avatar. Viewing the page source will show your current avatar is displayed using the data URI scheme, and the image content is base64 encoded as per the screenshot below.
 
 ### 7.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/7.PNG)
 
 Now let's try making the request again but changing the avatar value to private in hopes that the server will access the resource and get past the IP address block. To do this, firstly, right-click on one of the radio buttons on the avatar form and select Inspect:
 
 ### 8.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/8.PNG)
 
 And then click the Update Avatar button. Unfortunately, it looks like the web application has a deny list in place and has blocked access to the /private endpoint.
 
 ### 9.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/9.PNG)
 
 As you can see from the error message, the path cannot start with /private but don't worry, we've still got a trick up our sleeve to bypass this rule. We can use a directory traversal trick to reach our desired endpoint. Try setting the avatar value to `x/../private`
 
 ### 10.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/6.%20SSRF/images/10.PNG)
 
 You'll see we have now bypassed the rule, and the user updated the avatar. This trick works because when the web server receives the request for x/../private, it knows that the ../ string means to move up a directory that now translates the request to just /private.
 
@@ -130,7 +130,5 @@ Viewing the page source of the avatar form, you'll see the currently set avatar 
 
 
 
-## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 

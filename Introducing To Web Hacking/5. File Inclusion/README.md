@@ -9,7 +9,7 @@ In some scenarios, web applications are written to request access to files on a 
 
 ### URL.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/URL.PNG)
 
 
 ```http
@@ -21,7 +21,7 @@ Let's discuss a scenario where a user requests to access files from a webserver.
 
 ### file_request.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/file_request.PNG)
 
 
 # Path Traversal
@@ -34,14 +34,14 @@ The following graph shows how a web application stores files in /var/www/app. Th
 
 ### path_traversal.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/path_traversal.PNG)
 
 
 We can test out the URL parameter by adding payloads to see how the web application behaves. Path traversal attacks, also known as the dot-dot-slash attack, take advantage of moving the directory one step up using the double dots ../. If the attacker finds the entry point, which in this case get.php?file=, then the attacker may send something as follows, `http://webapp.thm/get.php?file=../../../../etc/passwd`
 
 ### path_traversal_to_passwd_file.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/path_traversal_to_passwd_file.PNG)
 
 ### For Windows Server
 
@@ -167,7 +167,7 @@ This works because the PHP filter only matches and replaces the first subset str
 
 ### LFI.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/LFI.PNG)
 
 4. Finally, we'll discuss the case where the developer forces the include to read from a defined directory! For example, if the web application asks to supply input that has to include a directory such as: `http://webapp.thm/index.php?lang=languages/EN.php` then, to exploit this, we need to include the directory in the payload like so: `?lang=languages/../../../../../etc/passwd`.
 
@@ -188,7 +188,7 @@ An external server must communicate with the application server for a successful
 
 ### RFI.PNG
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rohit00712/Jr-Penetration-Tester/blob/main/Introducing%20To%20Web%20Hacking/5.%20File%20Inclusion/images/RFI.PNG)
 
 ### RFI steps
 
